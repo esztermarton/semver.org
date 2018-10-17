@@ -94,19 +94,19 @@ LEHET, amikor a új funkciók kerülnek a belső, privát kódbázisba. Tartalma
 "patch" szintű változásokat is. A "patch" verziószám MUSZÁJ, hogy nullára
 csökkenjen amikor a "minor" verziószám növekszik
 
-1. Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards
+7. Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards
 compatible functionality is introduced to the public API. It MUST be
 incremented if any public API functionality is marked as deprecated. It MAY be
 incremented if substantial new functionality or improvements are introduced
 within the private code. It MAY include patch level changes. Patch version
 MUST be reset to 0 when minor version is incremented.
 
-1. Major version X (X.y.z | X > 0) MUST be incremented if any backwards
+8. Major version X (X.y.z | X > 0) MUST be incremented if any backwards
 incompatible changes are introduced to the public API. It MAY include minor
 and patch level changes. Patch and minor version MUST be reset to 0 when major
 version is incremented.
 
-1. A pre-release version MAY be denoted by appending a hyphen and a
+9. A pre-release version MAY be denoted by appending a hyphen and a
 series of dot separated identifiers immediately following the patch
 version. Identifiers MUST comprise only ASCII alphanumerics and hyphen
 [0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST
@@ -117,7 +117,7 @@ intended compatibility requirements as denoted by its associated
 normal version. Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,
 1.0.0-x.7.z.92.
 
-1. Build metadata MAY be denoted by appending a plus sign and a series of dot
+10. Build metadata MAY be denoted by appending a plus sign and a series of dot
 separated identifiers immediately following the patch or pre-release version.
 Identifiers MUST comprise only ASCII alphanumerics and hyphen [0-9A-Za-z-].
 Identifiers MUST NOT be empty. Build metadata SHOULD be ignored when determining
@@ -125,7 +125,7 @@ version precedence. Thus two versions that differ only in the build metadata,
 have the same precedence. Examples: 1.0.0-alpha+001, 1.0.0+20130313144700,
 1.0.0-beta+exp.sha.5114f85.
 
-1. Precedence refers to how versions are compared to each other when ordered.
+11. Precedence refers to how versions are compared to each other when ordered.
 Precedence MUST be calculated by separating the version into major, minor, patch
 and pre-release identifiers in that order (Build metadata does not figure
 into precedence). Precedence is determined by the first difference when
