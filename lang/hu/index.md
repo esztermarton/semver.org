@@ -144,41 +144,42 @@ elsőbbséget élvez a másik felett. Például: 1.0.0-alpha < 1.0.0-alpha.1 <
 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 <
 1.0.0-rc.1 < 1.0.0.
 
-Why Use Semantic Versioning?
+Miért használjunk Szemantikus Verziózást?
 ----------------------------
 
-This is not a new or revolutionary idea. In fact, you probably do something
-close to this already. The problem is that "close" isn't good enough. Without
-compliance to some sort of formal specification, version numbers are
-essentially useless for dependency management. By giving a name and clear
-definition to the above ideas, it becomes easy to communicate your intentions
-to the users of your software. Once these intentions are clear, flexible (but
-not too flexible) dependency specifications can finally be made.
+Ez nem egy új, forradalmi koncepció. Sőt, valószínüleg valami ehhez hasonló
+rendszert alkalmazol. A gond az az, hogy a 'hasonló' az nem elég. Egy hivatalos
+előíráshoz való szigorú ragaszkodás nélkül a verziószámok gyakorlatilag
+teljesen hasztalanná válnak a függőségek számontartásában. Másrészről viszont,
+megfelelő előírások és szabályok közlése mellett jelentősen egyszerűbb
+kommunikálni a szándékaidat a szofvered felhasználóinak. Ha ezek a törekvések
+egyértelműek, rugalmasak (de nem túl rugalmasak), a függőségi előírások
+megfogalmazhatóvá válnak.
 
-A simple example will demonstrate how Semantic Versioning can make dependency
-hell a thing of the past. Consider a library called "Firetruck." It requires a
-Semantically Versioned package named "Ladder." At the time that Firetruck is
-created, Ladder is at version 3.1.0. Since Firetruck uses some functionality
-that was first introduced in 3.1.0, you can safely specify the Ladder
-dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when
-Ladder version 3.1.1 and 3.2.0 become available, you can release them to your
-package management system and know that they will be compatible with existing
-dependent software.
+Egy egyszerű példa bemutatja, hogy a Szemantikus Verziózás hogyan tüntetheti el
+az Függések Számontartásának Pokolját. Vegyünk egy "Tűzoltóautó" nevű csomagot.
+Szüksége van egy szemantikusan verziózott csomagra: a "Létrá"-ra. Amikor a
+Tűzoltóautót létrehozták, a Létra verziója 3.1.0. Mivel a Tűzoltóautó olyan
+funkcionalitást használ ami a 3.1.0-ban lett bevezetve, nyugodtan meg lehet
+nevezni a függőséget: egy verziószám ami nagyobb vagy egyenlő mint 3.1.0, de
+kisebb mint 4.0.0. Amikor a Létranak a 3.1.1-es illetve 3.2.0-ás verziói
+elérhetővé válnak, bevezethetőek a Tűzoltóautó csomag menedzsment rendszerébe is
+anélkül hogy a kompatibilitást veszélyeztetné.
 
-As a responsible developer you will, of course, want to verify that any
-package upgrades function as advertised. The real world is a messy place;
-there's nothing we can do about that but be vigilant. What you can do is let
-Semantic Versioning provide you with a sane way to release and upgrade
-packages without having to roll new versions of dependent packages, saving you
-time and hassle.
+Felelős szoftverfejlesztőként természetesen igazolni akarod majd, hogy a
+csomagfrissítések megegyeznek elvártakkal. A világ egy kaotikus hely és ezzel
+szemben csak óvatosak lehetünk. Amit tehetsz az az, hogy legalább a saját
+szoftverfeljesztésed és kiadásodat szabályozza a Szemantikus verziózás, úgy hogy
+az attól függő csomagok minimálisan legyenek érintve, időt és erőfeszítést
+spórolva.
 
-If all of this sounds desirable, all you need to do to start using Semantic
-Versioning is to declare that you are doing so and then follow the rules. Link
-to this website from your README so others know the rules and can benefit from
-them.
+Ha ez kívánatosnak hangzódik, mindössze annyit kell tenned, hogy kijelentsd,
+hogy használod a Szemantikus Verziózást és kövesd a szabályait. Linkeld ezt a
+honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályokat és
+részesülhessenek az előnyeiben.
 
 
-FAQ
+Gyakori kérdések
 ---
 
 ### How should I deal with revisions in the 0.y.z initial development phase?
