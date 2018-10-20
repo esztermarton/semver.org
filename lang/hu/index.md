@@ -253,18 +253,18 @@ Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitás
 Nincs, de becsüljük meg ésszerűen a hosszát. Például, egy 255 karakteres verzió string erős túlzás. Különböző 
 rendszereknél, különböző verzió string hossz korlátokat alkalmazhatnak.
 
-About
+Infó
 -----
 
-The Semantic Versioning specification is authored by [Tom
-Preston-Werner](http://tom.preston-werner.com), inventor of Gravatars and
-cofounder of GitHub.
+A Semantic Versioning specifikáció szerzője [Tom Preston-Werner](http://tom.preston-werner.com), a Gravatars feltalálója és a GitHub társalapítója.
 
-If you'd like to leave feedback, please [open an issue on
-GitHub](https://github.com/mojombo/semver/issues).
+Észrevételekért [nyiss egy issue-t a GitHub-on](https://github.com/mojombo/semver/issues).
 
+Fordította:
+[Eszter Marton](https://github.com/esztermarton) (szerző),
+[Roland Kovács](https://github.com/koviroli) (szerző)
 
-License
+Licensz
 -------
 
 [Creative Commons - CC BY 3.0](http://creativecommons.org/licenses/by/3.0/)
