@@ -244,20 +244,14 @@ strictly be considered a patch release. Remember, Semantic Versioning is all
 about conveying meaning by how the version number changes. If these changes
 are important to your users, use the version number to inform them.
 
-### How should I handle deprecating functionality?
+### Hogyan kezeljem az elavult funkcionalitást?
 
-Deprecating existing functionality is a normal part of software development and
-is often required to make forward progress. When you deprecate part of your
-public API, you should do two things: (1) update your documentation to let
-users know about the change, (2) issue a new minor release with the deprecation
-in place. Before you completely remove the functionality in a new major release
-there should be at least one minor release that contains the deprecation so
-that users can smoothly transition to the new API.
+Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitások elavulnak, sőtt mi több, gyakran elvárt a szoftver fejlődésének érdekében. Amikor lecserélsz egy elavult részt a publikus API-dban, két dolgot kell tenned: (1) frissítsd a dokumentációt, hogy a felhasználók tudjanak a változásról, (2) eszközölj egy új minor kiadást az elavult résszel. Mielőtt teljesen eltörölnéd a funkcionalitást egy új, major kiadásban, kell lennie egy minor kiadásnak ami még tartalmazza az elavult részt, hogy a felhasználók zökkenőmentesen áttudjanak állni az új API-ra. 
 
-### Vannak-e megszorítások a verzió sztring hosszára nézve a semver szerint?
+### Vannak-e megszorítások a verzió string hosszára nézve a semver szerint?
 
-Nincs, de becsüljük meg ésszerűen a hosszát. Például, egy 255 karakteres verzió sztring erős túlzás. Különböző 
-rendszereknél, különböző verzió sztring hossz korlátokat alkalmazhatnak.
+Nincs, de becsüljük meg ésszerűen a hosszát. Például, egy 255 karakteres verzió string erős túlzás. Különböző 
+rendszereknél, különböző verzió string hossz korlátokat alkalmazhatnak.
 
 About
 -----
