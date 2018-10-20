@@ -3,7 +3,7 @@ title: Semantic Versioning 2.0.0
 redirect_from: /lang/hu/
 ---
 
-Semantic Versioning 2.0.0
+Szemantikus Verziószámozás 2.0.0
 ==============================
 
 Összefoglalás
@@ -20,7 +20,7 @@ visszafelé kompatibilitást.
 További verzió címkéket és kiadással kapcsolatos metaadatokat a MAJOR.MINOR.PATCH
 formátum kiegészítéseként lehet még hozzáadni.
 
-Bevezető
+Bevezetés
 ------------
 
 A szoftver menedzsment univerzumában létezik egy hely, ami még a bátrak szívét
@@ -57,7 +57,7 @@ kereszteltem. A séma mellett a szoftver evolúcióját az őt fedő verziószá
 változása tükrözi: a verziószámok így valós jelentéssel bírnak.
 
 
-A szemantikus verziószámozás leírása (SemVer)
+A Szemantikus Verziószámozás leírása (SemVer)
 ------------------------------------------
 
 A kulcsszavak "MUSZÁJ" vagy "KÖTELEZŐEN" ("MUST"), "NEM LEHET" vagy "NEM SZABAD"
@@ -65,7 +65,7 @@ A kulcsszavak "MUSZÁJ" vagy "KÖTELEZŐEN" ("MUST"), "NEM LEHET" vagy "NEM SZAB
 "VÁLASZTHATÓ(AN)" ("OPTIONAL") ebben a dokumentumban úgy vannak használva mint
 ahogyan itt le vannak írva: [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Szemantikus verziózást használó szoftvernek MUSZÁJ publikus API-t közzétennie.
+1. Szemantikus verziószámozást használó szoftvernek MUSZÁJ publikus API-t közzétennie.
 Ez az felület létezhet kizárolag dokumentáció formájában, vagy akár szoftverben
 meghatározva, de mindenféleképpen szükséges, hogy precíz és minden részletre
 kiterjedő legyen.
@@ -144,7 +144,7 @@ elsőbbséget élvez a másik felett. Például: 1.0.0-alpha < 1.0.0-alpha.1 <
 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 <
 1.0.0-rc.1 < 1.0.0.
 
-Miért használjunk Szemantikus Verziózást?
+Miért használjuk a Szemantikus Verziószámozást?
 ----------------------------
 
 Ez nem egy új, forradalmi koncepció. Sőt, valószínüleg valami ehhez hasonló
@@ -156,8 +156,8 @@ kommunikálni a szándékaidat a szofvered felhasználóinak. Ha ezek a törekv�
 egyértelműek, rugalmasak (de nem túl rugalmasak), a függőségi előírások
 megfogalmazhatóvá válnak.
 
-Egy egyszerű példa bemutatja, hogy a Szemantikus Verziózás hogyan tüntetheti el
-az Függések Számontartásának Pokolját. Vegyünk egy "Tűzoltóautó" nevű csomagot.
+Egy egyszerű példa bemutatja, hogy a Szemantikus Verziószámozás hogyan tüntetheti 
+el az Függések Számontartásának Pokolját. Vegyünk egy "Tűzoltóautó" nevű csomagot.
 Szüksége van egy szemantikusan verziózott csomagra: a "Létrá"-ra. Amikor a
 Tűzoltóautót létrehozták, a Létra verziója 3.1.0. Mivel a Tűzoltóautó olyan
 funkcionalitást használ ami a 3.1.0-ban lett bevezetve, nyugodtan meg lehet
@@ -169,13 +169,13 @@ anélkül hogy a kompatibilitást veszélyeztetné.
 Felelős szoftverfejlesztőként természetesen igazolni akarod majd, hogy a
 csomagfrissítések megegyeznek elvártakkal. A világ egy kaotikus hely és ezzel
 szemben csak óvatosak lehetünk. Amit tehetsz az az, hogy legalább a saját
-szoftverfeljesztésed és kiadásodat szabályozza a Szemantikus verziózás, úgy hogy
-az attól függő csomagok minimálisan legyenek érintve, időt és erőfeszítést
+szoftverfeljesztésed és kiadásodat szabályozza a Szemantikus Verziószámozás, 
+úgy hogy az attól függő csomagok minimálisan legyenek érintve, időt és erőfeszítést
 spórolva.
 
 Ha ez kívánatosnak hangzódik, mindössze annyit kell tenned, hogy kijelentsd,
-hogy használod a Szemantikus Verziózást és kövesd a szabályait. Linkeld ezt a
-honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályokat és
+hogy használod a Szemantikus Verziószámozást és kövesd a szabályait. Linkeld 
+ezt a honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályokat és
 részesülhessenek az előnyeiben.
 
 
