@@ -264,7 +264,7 @@ A Semantic Versioning specifikáció szerzője [Tom Preston-Werner](http://tom.p
 Észrevételekért [nyiss egy issue-t a GitHub-on](https://github.com/mojombo/semver/issues).
 
 Fordította:
-[Eszter Marton](https://github.com/esztermarton) (szerző),
+[Rebeka Marton](https://github.com/esztermarton) (szerző),
 [Roland Kovács](https://github.com/koviroli) (szerző)
 
 Licensz
