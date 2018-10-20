@@ -27,6 +27,7 @@ languages:
   he: עברית
   ka: ქართული
   hr: hrvatski
+  hu: magyar
 
 versions:
   - 2.0.0
