@@ -254,11 +254,10 @@ in place. Before you completely remove the functionality in a new major release
 there should be at least one minor release that contains the deprecation so
 that users can smoothly transition to the new API.
 
-### Does semver have a size limit on the version string?
+### Vannak-e megszorítások a verzió sztring hosszára nézve a semver szerint?
 
-No, but use good judgment. A 255 character version string is probably overkill,
-for example. Also, specific systems may impose their own limits on the size of
-the string.
+Nincs, de becsüljük meg ésszerűen a hosszát. Például, egy 255 karakteres verzió sztring erős túlzás. Különböző 
+rendszereknél, különböző verzió sztring hossz korlátokat alkalmazhatnak.
 
 About
 -----
