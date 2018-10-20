@@ -14,38 +14,38 @@ Vegyünk egy adott verzió számot, MAJOR.MINOR.PATCH, és növeljük:
 1. a MAJOR verzió számot ha a változtatásaink eredményeként elveszítjük a
    kompatibilitást korábbi verziókkal
 2. a MINOR verzió számot ha olyan funkcionalitásokat adunk amik megőrzik a
-hátrafele kompatibilitást.
-3. a PATCH verzió számot ha hátrafele kompatibilis hiba-javításokat adunk hozzá?.
+visszafelé kompatibilitást.
+3. a PATCH verzió számot ha visszafelé kompatibilis hibajavításokat adunk hozzá
 
-További RELEASE? előtti címkéket és BUILD? metaadatokat a MAJOR.MINOR.PATCH
+További verzió címkéket és kiadással kapcsolatos metaadatokat a MAJOR.MINOR.PATCH
 formátum kiegészítéseként lehet még hozzáadni.
 
 Bevezető
 ------------
 
 A szoftver menedzsment univerzumában létezik egy hely, ami még a bátrak szívét
-is megrendíti: az Ôsszefüggések Számontartásának Pokolja. Minél nagyobbra nő a
+is megrendíti: az Függések Számontartásának Pokolja. Minél nagyobbra nő a
 rendszered, minél több csomagot adsz hozzá, annál valószínűbb hogy előbb
 utóbb ebben az átkozott zúgban találod magad.
 
-Sok összefüggésekkel rendelkező rendszerekben az új csomagverziók hozzáadása
+Sok összefüggéssel rendelkező rendszerekben az új csomagverziók hozzáadása
 gyorsan rémálommá alakul át. Ha túl szigorúak az szoftver-függéseidnek a leírásai,
 fenn áll a veszélye annak, hogy "version lock" alakul ki (amikor nem tudsz úgy
 frissíteni egy csomagot, hogy vele együtt az összes tőle függő csomgagot ne
 frissítsd). Ugyanakkor, ha túl szabadon vannak ugyanezek megszabva,
-elkerülhetetlen, hogy idővel utólérjen a verzió-PROMISCUITY? (amikor jobb
+elkerülhetetlen, hogy idővel utólérjen a verzió-keveredés (amikor jobb
 kompatibilitást remélünk szoftver komponensek között mint ami realisztikus).
-Az Ôsszefüggések Számontartásának Pokolja az, amikor e két helyzet közül az
+Az Függések Számontartásának Pokolja az, amikor e két helyzet közül az
 egyik vagy akár egyszerre mindkettő meggátol a projekt könnyed és rizikómentes
 előrevitelében.
 
 Erre a problémára válaszként fejlesztettem ki az itt található szabály- és
 feltételrendszert amik meghatározza, hogy hogyan válasszuk és növeljük a
 verziószámokat. A szabályok alapja - bár nem egyetlen forrása - már elterjedt,
-jólműködő PRACTICES?? amik egyaránt találhatóak CLOSED és open-source
+legjobban bevált gyakorlatok amik egyaránt találhatóak zárt és nyílt forráskódú
 szoftverben. Az rendszer első feltétele egy publikus API létrehozása: ez
 egyaránt lehet dokumentáció formájában, vagy a programon keresztül meghatározva.
-Kulcsfontosságú, hogy ez az API átlátható es precíz?? legyen. Amiután az API már
+Kulcsfontosságú, hogy ez az API átlátható es precíz legyen. Amiután az API már
 közzé lett téve, minden változást a szoftverben verziószám növelésével
 kommunikálunk. A X.Y.Z (Major.Minor.Patch) formátumot választjuk. Hiba javítások
 amik nem érintik az API-t a "patch" verziószámot; hátrafele kompatibilis
@@ -60,20 +60,22 @@ változása tükrözi: a verziószámok így valós jelentéssel bírnak.
 A szemantikus verziószámozás leírása (SemVer)
 ------------------------------------------
 
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
-"SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be
-interpreted as described in [RFC 2119](http://tools.ietf.org/html/rfc2119).
+A kulcsszavak "MUSZÁJ" vagy "KÖTELEZŐEN" ("MUST"), "NEM LEHET" vagy "NEM SZABAD"
+("MUST NOT"), "AJÁNLOTT" ("SHOULD"), "NEM AJÁNLOTT" ("SHOULD NOT"),
+"VÁLASZTHATÓ(AN)" ("OPTIONAL") ebben a dokumentumban úgy vannak használva mint
+ahogyan itt le vannak írva: [RFC 2119](http://tools.ietf.org/html/rfc2119).
 
-1. Szemantikus verziózást használó szoftvernek MUSZÁJ publikus API-t közzétenni.
+1. Szemantikus verziózást használó szoftvernek MUSZÁJ publikus API-t közzétennie.
 Ez az felület létezhet kizárolag dokumentáció formájában, vagy akár szoftverben
-meghatározva, de mindenféleképpen szükséges, hogy precíz és COMPREHENSIVE legyen.
+meghatározva, de mindenféleképpen szükséges, hogy precíz és minden részletre
+kiterjedő legyen.
 
 2. Az általános verziószám formátuma MUSZÁJ, hogy az X.Y.Z legyen, ahol az X, Y
 és Z a természetes számok halmazába tartoznak, kezdő nullák nélkül. X a
 "major", Y a "minor" és Z a "patch" verziószám. Mindhárom MUSZÁJ, hogy
 számtanilag helyesen növekedjen. Például: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-3. Amint egy verziózott csomag RELEASE-elve?? lett, a csomag tartalma nem
+3. Amiután egy új csomagverzió forgalomba lett hozva, a csomag tartalma nem
 változhat. Bármilyen változás MUSZÁJ, hogy új verzióként legyen hozzáadva.
 
 4. A nulladik "major" verzió (0.Y.Z) korai fejlesztésekre alkalmazható. Bárhol
@@ -84,100 +86,100 @@ tökéletesen stabil legyen.
 verziószámok ennek az API-nak a változásától függnek.
 
 6. A "patch", Z verziószámot (x.y.Z | x > 0) MUSZÁJ növelni, amikor kizárólag
-hátrafele kompatibilis hibajavításokat addunk a szoftverhez. Ilyen "bug-fix"
-definiciója?? egy olyan belső változás ami addig hibás viselkedést korrigál.
+hátrafele kompatibilis hibajavításokat addunk a szoftverhez. Ilyen hibajavítás
+definíciója egy olyan belső változás ami addig hibás viselkedést korrigál.
 
 7. A "minor", Y verziószámot (x.Y.z | x > 0) MUSZÁJ növelni, amikor olyan új
 funkciókat adunk hozzá az API-hoz, ami a hátrafele kompatibilitást nem érinti.
-MUSZÁJ növelni, amikor korábbi funkciókat megjelölünk mint DEPRECATED?. Növelni
-LEHET, amikor a új funkciók kerülnek a belső, privát kódbázisba. TartalmazHAT
-"patch" szintű változásokat is. A "patch" verziószám MUSZÁJ, hogy nullára
-csökkenjen amikor a "minor" verziószám növekszik
+MUSZÁJ növelni, amikor korábbi funkciókat elavultként jelölünk meg. Növelni
+LEHET, amikor a új funkciók kerülnek a belső, privát kódbázisba. VÁLASZTHATÓAN
+tartalmazhat "patch" szintű változásokat is. A "patch" verziószám MUSZÁJ, hogy
+nullára csökkenjen amikor a "minor" verziószám növekszik.
 
-7. Minor version Y (x.Y.z | x > 0) MUST be incremented if new, backwards
-compatible functionality is introduced to the public API. It MUST be
-incremented if any public API functionality is marked as deprecated. It MAY be
-incremented if substantial new functionality or improvements are introduced
-within the private code. It MAY include patch level changes. Patch version
-MUST be reset to 0 when minor version is incremented.
+8. A "major", X verziószámot (X.y.z | X > 0) MUSZÁJ növelni, amikor visszafelé
+inkompatiblis változások vannak hozzáadva a nyílvános API-hoz. VÁLASZTHATÓAN
+tartalmazhat "patch" és "minor" szintű változásokat is. A "patch" és "minor"
+verziószámok MUSZÁJ, hogy nullára csökkenjenek amikor a "major" verziószám
+növekszik.
 
-8. Major version X (X.y.z | X > 0) MUST be incremented if any backwards
-incompatible changes are introduced to the public API. It MAY include minor
-and patch level changes. Patch and minor version MUST be reset to 0 when major
-version is incremented.
+9. Egy kiadás előtti ("pre-release") verzió VÁLASZTHATÓAN jelölhető egy
+kötőjelet követően pontokkal elválasztott azonosítókkal, közvetlenül a "patch"
+verzió után. Ezek az azonosítók MUSZÁJ, hogy kizárólag ASCII alfanumerikus
+karakterekből és kötőjelekből álljon. Azonosítók NEM LEHETNEK üresek.
+Számazonosítók NEM SZABAD, hogy nullával kezdődjenek. A kiadás előtti verziókhoz
+képest elsőbbséget élveznek a hozzátartozó normál verziók. Egy kiadás előtti
+verzió arra utal, hogy a verzió instabil és lehet, hogy nem elégíti ki a
+szándékozott kompatibilitási feltételeket amire a normál verzió utal. Például:
+1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-9. A pre-release version MAY be denoted by appending a hyphen and a
-series of dot separated identifiers immediately following the patch
-version. Identifiers MUST comprise only ASCII alphanumerics and hyphen
-[0-9A-Za-z-]. Identifiers MUST NOT be empty. Numeric identifiers MUST
-NOT include leading zeroes. Pre-release versions have a lower
-precedence than the associated normal version. A pre-release version
-indicates that the version is unstable and might not satisfy the
-intended compatibility requirements as denoted by its associated
-normal version. Examples: 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7,
-1.0.0-x.7.z.92.
-
-10. Build metadata MAY be denoted by appending a plus sign and a series of dot
-separated identifiers immediately following the patch or pre-release version.
-Identifiers MUST comprise only ASCII alphanumerics and hyphen [0-9A-Za-z-].
-Identifiers MUST NOT be empty. Build metadata SHOULD be ignored when determining
-version precedence. Thus two versions that differ only in the build metadata,
-have the same precedence. Examples: 1.0.0-alpha+001, 1.0.0+20130313144700,
+10. Kiadással ("build") kapcsolatos metaadatok VÁLASZTHATÓAN egy plusz jel
+hozzáadásával, majd pontokkal elválasztott azonotsítokkal rögzíthetőek,
+közvetlenül a "patch" vagy kiadás előtti ("pre-release") verzió után. Ezek az
+azonosítól MUSZÁK hogy kizárólag ASCII alfanumerikus karakterekből és
+kötőjelekből álljon. Azonosítók NEM LEHETNEK üresek. Számazonosítók NEM SZABAD,
+hogy nullával kezdődjenek. A kiadással kapcsolatos metaadatokat AJÁNLOTT
+figyelmen kívül hagyni a verziók elsőbbségének meghatározásakor. Ennélfogva
+két verzió ami csupán kiadással kapcsolatos metaadatban különböznek egyenlő
+elsőbbséget élveznek. Például: 1.0.0-alpha+001, 1.0.0+20130313144700,
 1.0.0-beta+exp.sha.5114f85.
 
-11. Precedence refers to how versions are compared to each other when ordered.
-Precedence MUST be calculated by separating the version into major, minor, patch
-and pre-release identifiers in that order (Build metadata does not figure
-into precedence). Precedence is determined by the first difference when
-comparing each of these identifiers from left to right as follows: Major, minor,
-and patch versions are always compared numerically. Example: 1.0.0 < 2.0.0 <
-2.1.0 < 2.1.1. When major, minor, and patch are equal, a pre-release version has
-lower precedence than a normal version. Example: 1.0.0-alpha < 1.0.0. Precedence
-for two pre-release versions with the same major, minor, and patch version MUST
-be determined by comparing each dot separated identifier from left to right
-until a difference is found as follows: identifiers consisting of only digits
-are compared numerically and identifiers with letters or hyphens are compared
-lexically in ASCII sort order. Numeric identifiers always have lower precedence
-than non-numeric identifiers. A larger set of pre-release fields has a higher
-precedence than a smaller set, if all of the preceding identifiers are equal.
-Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta <
-1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
+11. Az elsőbbség arra utal, hogy hogy viszonyulnak egymáshoz a verziók amikor
+sorrendbe vannak téve. Az elsőbbséget MUSZÁJ a "major", "minor", "patch" és
+"pre-release" alapján számolni, ebben a sorrendben (kiadással kapcsolatos
+metaadatok, "build-metadata" nincsenek beleszámítva). Az elsőbbségi sorrendet
+az első eltéző azonosító határozza meg amikor balról jobbra olvassuk a
+verziószámot, tehát ebben a sorrendben: "major", "minor" és "patch", és a
+különbség számtanilag értelmezhető. Például: 1.0.0 < 2.0.0 < 2.1.0 < 2.1.1.
+Amikor a "major", "minor" es "patch" verziószámok egyenlőek, a kiadás előtti
+("pre-release") verziónak kisebb elsőbbsége van. Például: 1.0.0-alpha < 1.0.0.
+Azonos normál verzióhoz tartozó, kiadás előtti ("pre-release") verziók közötti
+elsőbbséget MUSZÁJ annak alapján meghatározni, hogy balról jobbra olvasva a
+ponttal elválasztott azonosítókat összehasonlítjuk karakterről karakterre.
+Számazonosítok számtanilag, alfanumerikus azonosítók ASCII alapján vannak
+sorrendbe rakva. Számazonosítóknak kisebb az elsőbbségge mint nem numerikus
+azonosítók. Amikor két "pre-release" verzió közötti különbség csak az, hogy az
+egyiknek az azonosítói pontosan megegyeznek a másikéval, de ezen felül még
+tartalmaz további azonosítokat is, akkor a több azonosítóval rendelkező verzió
+elsőbbséget élvez a másik felett. Például: 1.0.0-alpha < 1.0.0-alpha.1 <
+1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 <
+1.0.0-rc.1 < 1.0.0.
 
-Why Use Semantic Versioning?
+Miért használjunk Szemantikus Verziózást?
 ----------------------------
 
-This is not a new or revolutionary idea. In fact, you probably do something
-close to this already. The problem is that "close" isn't good enough. Without
-compliance to some sort of formal specification, version numbers are
-essentially useless for dependency management. By giving a name and clear
-definition to the above ideas, it becomes easy to communicate your intentions
-to the users of your software. Once these intentions are clear, flexible (but
-not too flexible) dependency specifications can finally be made.
+Ez nem egy új, forradalmi koncepció. Sőt, valószínüleg valami ehhez hasonló
+rendszert alkalmazol. A gond az az, hogy a 'hasonló' az nem elég. Egy hivatalos
+előíráshoz való szigorú ragaszkodás nélkül a verziószámok gyakorlatilag
+teljesen hasztalanná válnak a függőségek számontartásában. Másrészről viszont,
+megfelelő előírások és szabályok közlése mellett jelentősen egyszerűbb
+kommunikálni a szándékaidat a szofvered felhasználóinak. Ha ezek a törekvések
+egyértelműek, rugalmasak (de nem túl rugalmasak), a függőségi előírások
+megfogalmazhatóvá válnak.
 
-A simple example will demonstrate how Semantic Versioning can make dependency
-hell a thing of the past. Consider a library called "Firetruck." It requires a
-Semantically Versioned package named "Ladder." At the time that Firetruck is
-created, Ladder is at version 3.1.0. Since Firetruck uses some functionality
-that was first introduced in 3.1.0, you can safely specify the Ladder
-dependency as greater than or equal to 3.1.0 but less than 4.0.0. Now, when
-Ladder version 3.1.1 and 3.2.0 become available, you can release them to your
-package management system and know that they will be compatible with existing
-dependent software.
+Egy egyszerű példa bemutatja, hogy a Szemantikus Verziózás hogyan tüntetheti el
+az Függések Számontartásának Pokolját. Vegyünk egy "Tűzoltóautó" nevű csomagot.
+Szüksége van egy szemantikusan verziózott csomagra: a "Létrá"-ra. Amikor a
+Tűzoltóautót létrehozták, a Létra verziója 3.1.0. Mivel a Tűzoltóautó olyan
+funkcionalitást használ ami a 3.1.0-ban lett bevezetve, nyugodtan meg lehet
+nevezni a függőséget: egy verziószám ami nagyobb vagy egyenlő mint 3.1.0, de
+kisebb mint 4.0.0. Amikor a Létranak a 3.1.1-es illetve 3.2.0-ás verziói
+elérhetővé válnak, bevezethetőek a Tűzoltóautó csomag menedzsment rendszerébe is
+anélkül hogy a kompatibilitást veszélyeztetné.
 
-As a responsible developer you will, of course, want to verify that any
-package upgrades function as advertised. The real world is a messy place;
-there's nothing we can do about that but be vigilant. What you can do is let
-Semantic Versioning provide you with a sane way to release and upgrade
-packages without having to roll new versions of dependent packages, saving you
-time and hassle.
+Felelős szoftverfejlesztőként természetesen igazolni akarod majd, hogy a
+csomagfrissítések megegyeznek elvártakkal. A világ egy kaotikus hely és ezzel
+szemben csak óvatosak lehetünk. Amit tehetsz az az, hogy legalább a saját
+szoftverfeljesztésed és kiadásodat szabályozza a Szemantikus verziózás, úgy hogy
+az attól függő csomagok minimálisan legyenek érintve, időt és erőfeszítést
+spórolva.
 
-If all of this sounds desirable, all you need to do to start using Semantic
-Versioning is to declare that you are doing so and then follow the rules. Link
-to this website from your README so others know the rules and can benefit from
-them.
+Ha ez kívánatosnak hangzódik, mindössze annyit kell tenned, hogy kijelentsd,
+hogy használod a Szemantikus Verziózást és kövesd a szabályait. Linkeld ezt a
+honlapot a csomagod README-jébe, hogy mások is megismerjék a szabályokat és
+részesülhessenek az előnyeiben.
 
 
-FAQ
+Gyakori kérdések
 ---
 
 ### How should I deal with revisions in the 0.y.z initial development phase?
@@ -251,7 +253,8 @@ Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitás
 ### Vannak-e megszorítások a verzió string hosszára nézve a semver szerint?
 
 Nincs, de becsüljük meg ésszerűen a hosszát. Például, egy 255 karakteres verzió string erős túlzás. Különböző 
-rendszereknél, különböző verzió string hossz korlátokat alkalmazhatnak.
+rendszereknél, különböző verzió sztring hossz korlátokat alkalmazhatnak.
+
 
 Infó
 -----
