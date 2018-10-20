@@ -1,5 +1,5 @@
 ---
-title: Semantic Versioning 2.0.0
+title: Szemantikus Verziószámozás 2.0.0
 redirect_from: /lang/hu/
 ---
 
@@ -147,7 +147,7 @@ elsőbbséget élvez a másik felett. Például: 1.0.0-alpha < 1.0.0-alpha.1 <
 Miért használjuk a Szemantikus Verziószámozást?
 ----------------------------
 
-Ez nem egy új, forradalmi koncepció. Sőt, valószínüleg valami ehhez hasonló
+Ez nem egy új vagy forradalmi koncepció. Sőt, valószínüleg valami ehhez hasonló
 rendszert alkalmazol. A gond az az, hogy a 'hasonló' az nem elég. Egy hivatalos
 előíráshoz való szigorú ragaszkodás nélkül a verziószámok gyakorlatilag
 teljesen hasztalanná válnak a függőségek számontartásában. Másrészről viszont,
