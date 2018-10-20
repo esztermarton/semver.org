@@ -253,7 +253,7 @@ Teljesen normális esemény a szoftverfejlesztésben, hogy egyes funkcionalitás
 ### Vannak-e megszorítások a verzió string hosszára nézve a semver szerint?
 
 Nincs, de becsüljük meg ésszerűen a hosszát. Például, egy 255 karakteres verzió string erős túlzás. Különböző 
-rendszereknél, különböző verzió sztring hossz korlátokat alkalmazhatnak.
+rendszereknél, különböző verzió string hossz korlátokat alkalmazhatnak.
 
 
 Infó
