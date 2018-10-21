@@ -237,14 +237,12 @@ modification depends on whether you updated your dependencies in order to fix
 a bug or introduce new functionality. I would usually expect additional code
 for the latter instance, in which case it's obviously a minor level increment.
 
-### What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)?
+### Mi a teendő, ha véletlenül megváltoztatom a publikus API-t oly módon, amely nem összeférhető a verzió szám változással (pl. nagy, major változást eszközölünk egy patch kiadásban)?
 
-Use your best judgment. If you have a huge audience that will be drastically
-impacted by changing the behavior back to what the public API intended, then
-it may be best to perform a major version release, even though the fix could
-strictly be considered a patch release. Remember, Semantic Versioning is all
-about conveying meaning by how the version number changes. If these changes
-are important to your users, use the version number to inform them.
+Dönts legjobb meglátásod szerint. Ha meglehetősen nagy a felhasználói kör akiket drasztikusan befolyásolna 
+a publikus API működésének degradálása, akkor a legjobb amit tehetsz, hogy eszközölsz egy új major verzió kiadást, 
+akkor is ha a változás szigorúan egy patch kiadást kívánna. Tartsd észben, a szemantikus verziószámozás jelentést hordoz a verziószámok változásával.
+Ha a változások fontosak a felhasználóid számára, jelezd a verziószámokkal.
 
 ### Hogyan kezeljem az elavult funkcionalitást?
 
