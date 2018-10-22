@@ -218,14 +218,13 @@ nobody knows how to use your software, or what methods are safe to call. In
 the long run, Semantic Versioning, and the insistence on a well defined public
 API can keep everyone and everything running smoothly.
 
-### What do I do if I accidentally release a backwards incompatible change as a minor version?
+### Mit tegyek ha véletlenül kiadok egy visszafelé inkompatibilis változtatást minor verzióként?
 
-As soon as you realize that you've broken the Semantic Versioning spec, fix
-the problem and release a new minor version that corrects the problem and
-restores backwards compatibility. Even under this circumstance, it is
-unacceptable to modify versioned releases. If it's appropriate,
-document the offending version and inform your users of the problem so that
-they are aware of the offending version.
+Amint rájösz, hogy megszegted a Szemantikus Verziószámozás szabályait, javítsd a hibát és
+adj ki egy új minor verziót a javított hibával és a helyrehozott visszafelé kompatibilitással.
+Még ezen körülmények között is elfogadhatatlan, hogy módosíts kiadott verziót. Ha lehetséges, 
+dokumentáld az érintett verziót és értesítsd a felhasználókat, hogy tisztában legyenek
+a verzió problémájával kapcsolatban.
 
 ### Mit tegyek ha frissítem a saját függőségeimet a publikus API változtatása nélkül?
 
