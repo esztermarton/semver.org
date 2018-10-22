@@ -200,14 +200,11 @@ Major version zero is all about rapid development. If you're changing the API
 every day you should either still be in version 0.y.z or on a separate
 development branch working on the next major version.
 
-### If even the tiniest backwards incompatible changes to the public API require a major version bump, won't I end up at version 42.0.0 very rapidly?
+### Ha a legkissebb visszafelé inkompatibilis változtatás is, a publikus API-ban egy major verzió növelést kíván, nem fogok túl gyorsan a 42.0.0 verziónál kikötni?
 
-This is a question of responsible development and foresight. Incompatible
-changes should not be introduced lightly to software that has a lot of
-dependent code. The cost that must be incurred to upgrade can be significant.
-Having to bump major versions to release incompatible changes means you'll
-think through the impact of your changes, and evaluate the cost/benefit ratio
-involved.
+Ez előrelátás és felelősségteljes fejlesztés kérdése. Inkompatibilis változtatást nem kéne könnyedén bevezetni olyan szoftverbe
+ahol ez sok kód függvénye. A javítás során felmerülő költségek jelentősek lehetnek. Kiadásra szánt major verzió növelésénél 
+végig kell gondolnod, a változtatás hatásait és kiértékelned a bennefoglalt költség/haszon arányt.
 
 ### Túl sok munka dokumentálni az egész publikus API-t!
 
