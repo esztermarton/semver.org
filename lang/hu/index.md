@@ -209,14 +209,13 @@ Having to bump major versions to release incompatible changes means you'll
 think through the impact of your changes, and evaluate the cost/benefit ratio
 involved.
 
-### Documenting the entire public API is too much work!
+### Túl sok munka dokumentálni az egész publikus API-t!
 
-It is your responsibility as a professional developer to properly document
-software that is intended for use by others. Managing software complexity is a
-hugely important part of keeping a project efficient, and that's hard to do if
-nobody knows how to use your software, or what methods are safe to call. In
-the long run, Semantic Versioning, and the insistence on a well defined public
-API can keep everyone and everything running smoothly.
+Professzionális fejlesztőként a te feladatod megfelelően dokumentálni az éles használatra
+kiadott szoftvert. A projekt hatékonyságának megtartása érdekében, egy másik rendkívül fontos feladat
+a szoftver komplexitásának kezelése, és azt nehéz kezelni, ha senki nem tudja, hogyan kell használni a szoftvert
+vagy milyen metódusokat biztonságos meghívni. Hosszútávon a Szemantikus verziózás, és a jól definiált publikus API-hoz 
+való ragaszkodás meghozza az eredményét, mindenki és minden zökkenőmentesen fog haladni.
 
 ### Mit tegyek ha véletlenül kiadok egy visszafelé inkompatibilis változtatást minor verzióként?
 
