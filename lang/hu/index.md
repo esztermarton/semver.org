@@ -227,15 +227,14 @@ unacceptable to modify versioned releases. If it's appropriate,
 document the offending version and inform your users of the problem so that
 they are aware of the offending version.
 
-### What should I do if I update my own dependencies without changing the public API?
+### Mit tegyek ha frissítem a saját függőségeimet a publikus API változtatása nélkül?
 
-That would be considered compatible since it does not affect the public API.
-Software that explicitly depends on the same dependencies as your package
-should have their own dependency specifications and the author will notice any
-conflicts. Determining whether the change is a patch level or minor level
-modification depends on whether you updated your dependencies in order to fix
-a bug or introduce new functionality. I would usually expect additional code
-for the latter instance, in which case it's obviously a minor level increment.
+Jól átgondolva ez kompatibilis, mert nem érinti a publikus API-t.
+A szoftvernek amelyre egyértleműen fent állnak azok a függőségek amelyek a te csomagodra, 
+saját függőségi speicifikációjának kell lennie, ezért az író észrefog venni bármilyen konfliktust. 
+Annak megállapítása pedig, hogy a változtatás minor vagy major szintű, attól függ, 
+hogy a függőségek módosítása bug javítása, avagy új funkció bevezetéséből eredendő. Az utóbbi esetben 
+általában kód bővítésre lehet számítani, melynél egyértelmű, hogy minor szintű inkrementálásról beszélünk.
 
 ### Mi a teendő, ha véletlenül megváltoztatom a publikus API-t oly módon, amely nem összeférhető a verzió szám változással (pl. nagy, major változást eszközölünk egy patch kiadásban)?
 
