@@ -194,11 +194,10 @@ If your software is being used in production, it should probably already be
 be 1.0.0. If you're worrying a lot about backwards compatibility, you should
 probably already be 1.0.0.
 
-### Doesn't this discourage rapid development and fast iteration?
+### Nem ellenzi ez a gyors fejlesztés és a gyors iterációt?
 
-Major version zero is all about rapid development. If you're changing the API
-every day you should either still be in version 0.y.z or on a separate
-development branch working on the next major version.
+A gyors fejlesztés a zéró major verzióról szól. Ha minden nap változtatod az API-t, még a 0.y.z verziónál kell hogy tarts 
+vagy egy külön ágban kell hogy dolgozz a következő major verzión.
 
 ### Ha a legkissebb visszafelé inkompatibilis változtatás is, a publikus API-ban egy major verzió növelést kíván, nem fogok túl gyorsan a 42.0.0 verziónál kikötni?
 
