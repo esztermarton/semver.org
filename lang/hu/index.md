@@ -182,10 +182,10 @@ részesülhessenek az előnyeiben.
 Gyakori kérdések
 ---
 
-### How should I deal with revisions in the 0.y.z initial development phase?
+### Hogyan döntsek a revízióról a 0.y.z kezdeti fejlesztési fázisban?
 
-The simplest thing to do is start your initial development release at 0.1.0
-and then increment the minor version for each subsequent release.
+A legegyszerűbb dolog amit tehetsz a kezdeti fejlesztési fázisban, hogy elkezded 
+a 0.1.0 verzióval és a minor verziót inkrementálod minden egyes újabb kiadásnál.
 
 ### Honnan tudom mikor jön el az 1.0.0 ideje?
 
