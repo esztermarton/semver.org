@@ -24,18 +24,18 @@ Bevezetés
 ------------
 
 A szoftver menedzsment univerzumában létezik egy hely, ami még a bátrak szívét
-is megrendíti: az Függések Számontartásának Pokolja. Minél nagyobbra nő a
+is megrendíti: az Függősések Számontartásának Pokolja. Minél nagyobbra nő a
 rendszered, minél több csomagot adsz hozzá, annál valószínűbb hogy előbb
 utóbb ebben az átkozott zúgban találod magad.
 
-Sok összefüggéssel rendelkező rendszerekben az új csomagverziók hozzáadása
-gyorsan rémálommá alakul át. Ha túl szigorúak az szoftver-függéseidnek a leírásai,
+Sok összefüggőségsel rendelkező rendszerekben az új csomagverziók hozzáadása
+gyorsan rémálommá alakul át. Ha túl szigorúak az szoftver-függőségeidnek a leírásai,
 fenn áll a veszélye annak, hogy "version lock" alakul ki (amikor nem tudsz úgy
 frissíteni egy csomagot, hogy vele együtt az összes tőle függő csomgagot ne
 frissítsd). Ugyanakkor, ha túl szabadon vannak ugyanezek megszabva,
 elkerülhetetlen, hogy idővel utólérjen a verzió-keveredés (amikor jobb
 kompatibilitást remélünk szoftver komponensek között mint ami realisztikus).
-Az Függések Számontartásának Pokolja az, amikor e két helyzet közül az
+Az Függősések Számontartásának Pokolja az, amikor e két helyzet közül az
 egyik vagy akár egyszerre mindkettő meggátol a projekt könnyed és rizikómentes
 előrevitelében.
 
@@ -157,7 +157,7 @@ egyértelműek, rugalmasak (de nem túl rugalmasak), a függőségi előírások
 megfogalmazhatóvá válnak.
 
 Egy egyszerű példa bemutatja, hogy a Szemantikus Verziószámozás hogyan tüntetheti 
-el az Függések Számontartásának Pokolját. Vegyünk egy "Tűzoltóautó" nevű csomagot.
+el az Függősések Számontartásának Pokolját. Vegyünk egy "Tűzoltóautó" nevű csomagot.
 Szüksége van egy szemantikusan verziózott csomagra: a "Létrá"-ra. Amikor a
 Tűzoltóautót létrehozták, a Létra verziója 3.1.0. Mivel a Tűzoltóautó olyan
 funkcionalitást használ ami a 3.1.0-ban lett bevezetve, nyugodtan meg lehet
