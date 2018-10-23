@@ -182,69 +182,59 @@ részesülhessenek az előnyeiben.
 Gyakori kérdések
 ---
 
-### How should I deal with revisions in the 0.y.z initial development phase?
+### Hogyan döntsek a revízióról a 0.y.z kezdeti fejlesztési fázisban?
 
-The simplest thing to do is start your initial development release at 0.1.0
-and then increment the minor version for each subsequent release.
+A legegyszerűbb dolog amit tehetsz a kezdeti fejlesztési fázisban, hogy elkezded 
+a 0.1.0 verzióval és a minor verziót inkrementálod minden egyes újabb kiadásnál.
 
-### How do I know when to release 1.0.0?
+### Honnan tudom mikor jön el az 1.0.0 ideje?
 
-If your software is being used in production, it should probably already be
-1.0.0. If you have a stable API on which users have come to depend, you should
-be 1.0.0. If you're worrying a lot about backwards compatibility, you should
-probably already be 1.0.0.
+Ha a szoftvered élesben lesz használva, akkor valószínűleg eljött az ideje az 1.0.0 verziónak.
+Ha van egy stabil API-d, amitől már felhasználók függnek, eljött az ideje az 1.0.0 verziónak. Ha
+tartasz a visszafelé kompatibilitástól, nagy a valószínűsége, hogy eljött az 1.0.0 ideje.
 
-### Doesn't this discourage rapid development and fast iteration?
+### Nem ellenzi ez a gyors fejlesztés és a gyors iterációt?
 
-Major version zero is all about rapid development. If you're changing the API
-every day you should either still be in version 0.y.z or on a separate
-development branch working on the next major version.
+A gyors fejlesztés a zéró major verzióról szól. Ha minden nap változtatod az API-t, még a 0.y.z verziónál kell hogy tarts 
+vagy egy külön ágban kell hogy dolgozz a következő major verzión.
 
-### If even the tiniest backwards incompatible changes to the public API require a major version bump, won't I end up at version 42.0.0 very rapidly?
+### Ha a legkissebb visszafelé inkompatibilis változtatás is, a publikus API-ban egy major verzió növelést kíván, nem fogok túl gyorsan a 42.0.0 verziónál kikötni?
 
-This is a question of responsible development and foresight. Incompatible
-changes should not be introduced lightly to software that has a lot of
-dependent code. The cost that must be incurred to upgrade can be significant.
-Having to bump major versions to release incompatible changes means you'll
-think through the impact of your changes, and evaluate the cost/benefit ratio
-involved.
+Ez előrelátás és felelősségteljes fejlesztés kérdése. Inkompatibilis változtatást nem kéne könnyedén bevezetni olyan szoftverbe
+ahol ez sok kód függvénye. A javítás során felmerülő költségek jelentősek lehetnek. Kiadásra szánt major verzió növelésénél 
+végig kell gondolnod, a változtatás hatásait és kiértékelned a bennefoglalt költség/haszon arányt.
 
-### Documenting the entire public API is too much work!
+### Túl sok munka dokumentálni az egész publikus API-t!
 
-It is your responsibility as a professional developer to properly document
-software that is intended for use by others. Managing software complexity is a
-hugely important part of keeping a project efficient, and that's hard to do if
-nobody knows how to use your software, or what methods are safe to call. In
-the long run, Semantic Versioning, and the insistence on a well defined public
-API can keep everyone and everything running smoothly.
+Professzionális fejlesztőként a te feladatod megfelelően dokumentálni az éles használatra
+kiadott szoftvert. A projekt hatékonyságának megtartása érdekében, egy másik rendkívül fontos feladat
+a szoftver komplexitásának kezelése, és azt nehéz kezelni, ha senki nem tudja, hogyan kell használni a szoftvert
+vagy milyen metódusokat biztonságos meghívni. Hosszútávon a Szemantikus verziózás, és a jól definiált publikus API-hoz 
+való ragaszkodás meghozza az eredményét, mindenki és minden zökkenőmentesen fog haladni.
 
-### What do I do if I accidentally release a backwards incompatible change as a minor version?
+### Mit tegyek ha véletlenül kiadok egy visszafelé inkompatibilis változtatást minor verzióként?
 
-As soon as you realize that you've broken the Semantic Versioning spec, fix
-the problem and release a new minor version that corrects the problem and
-restores backwards compatibility. Even under this circumstance, it is
-unacceptable to modify versioned releases. If it's appropriate,
-document the offending version and inform your users of the problem so that
-they are aware of the offending version.
+Amint rájösz, hogy megszegted a Szemantikus Verziószámozás szabályait, javítsd a hibát és
+adj ki egy új minor verziót a javított hibával és a helyrehozott visszafelé kompatibilitással.
+Még ezen körülmények között is elfogadhatatlan, hogy módosíts kiadott verziót. Ha lehetséges, 
+dokumentáld az érintett verziót és értesítsd a felhasználókat, hogy tisztában legyenek
+a verzió problémájával kapcsolatban.
 
-### What should I do if I update my own dependencies without changing the public API?
+### Mit tegyek ha frissítem a saját függőségeimet a publikus API változtatása nélkül?
 
-That would be considered compatible since it does not affect the public API.
-Software that explicitly depends on the same dependencies as your package
-should have their own dependency specifications and the author will notice any
-conflicts. Determining whether the change is a patch level or minor level
-modification depends on whether you updated your dependencies in order to fix
-a bug or introduce new functionality. I would usually expect additional code
-for the latter instance, in which case it's obviously a minor level increment.
+Jól átgondolva ez kompatibilis, mert nem érinti a publikus API-t.
+A szoftvernek amelyre egyértleműen fent állnak azok a függőségek amelyek a te csomagodra, 
+saját függőségi speicifikációjának kell lennie, ezért az író észrefog venni bármilyen konfliktust. 
+Annak megállapítása pedig, hogy a változtatás minor vagy major szintű, attól függ, 
+hogy a függőségek módosítása bug javítása, avagy új funkció bevezetéséből eredendő. Az utóbbi esetben 
+általában kód bővítésre lehet számítani, melynél egyértelmű, hogy minor szintű inkrementálásról beszélünk.
 
-### What if I inadvertently alter the public API in a way that is not compliant with the version number change (i.e. the code incorrectly introduces a major breaking change in a patch release)?
+### Mi a teendő, ha véletlenül megváltoztatom a publikus API-t oly módon, amely nem összeférhető a verzió szám változással (pl. nagy, major változást eszközölünk egy patch kiadásban)?
 
-Use your best judgment. If you have a huge audience that will be drastically
-impacted by changing the behavior back to what the public API intended, then
-it may be best to perform a major version release, even though the fix could
-strictly be considered a patch release. Remember, Semantic Versioning is all
-about conveying meaning by how the version number changes. If these changes
-are important to your users, use the version number to inform them.
+Dönts legjobb meglátásod szerint. Ha meglehetősen nagy a felhasználói kör akiket drasztikusan befolyásolna 
+a publikus API működésének degradálása, akkor a legjobb amit tehetsz, hogy eszközölsz egy új major verzió kiadást, 
+akkor is ha a változás szigorúan egy patch kiadást kívánna. Tartsd észben, a szemantikus verziószámozás jelentést hordoz a verziószámok változásával.
+Ha a változások fontosak a felhasználóid számára, jelezd a verziószámokkal.
 
 ### Hogyan kezeljem az elavult funkcionalitást?
 
