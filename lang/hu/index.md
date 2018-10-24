@@ -34,7 +34,7 @@ fenn áll a veszélye annak, hogy "version lock" alakul ki (amikor nem tudsz úg
 frissíteni egy csomagot, hogy vele együtt az összes tőle függő csomgagot ne
 frissítsd). Ugyanakkor, ha túl szabadon vannak ugyanezek megszabva,
 elkerülhetetlen, hogy idővel utólérjen a verzió-keveredés (amikor jobb
-kompatibilitás- remélünk szoftver komponensek között mint ami realisztikus).
+kompatibilitást remélünk szoftver komponensek között mint ami realisztikus).
 A verziópokol az, amikor e két helyzet közül az egyik vagy akár egyszerre mindkettő 
 meggátol a projekt könnyed és rizikómentes előrevitelében.
 
