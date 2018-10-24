@@ -1,3 +1,4 @@
+
 ---
 title: Szemantikus Verziószámozás 2.0.0
 redirect_from: /lang/hu/
@@ -13,9 +14,9 @@ Vegyünk egy adott verzió számot, MAJOR.MINOR.PATCH, és növeljük:
 
 1. a MAJOR verzió számot ha a változtatásaink eredményeként elveszítjük a
    kompatibilitást korábbi verziókkal
-2. a MINOR verzió számot ha olyan funkcionalitásokat adunk amik megőrzik a
+1. a MINOR verzió számot ha olyan funkcionalitásokat adunk amik megőrzik a
 visszafelé kompatibilitást.
-3. a PATCH verzió számot ha visszafelé kompatibilis hibajavításokat adunk hozzá
+1. a PATCH verzió számot ha visszafelé kompatibilis hibajavításokat adunk hozzá
 
 További verzió címkéket és kiadással kapcsolatos metaadatokat a MAJOR.MINOR.PATCH
 formátum kiegészítéseként lehet még hozzáadni.
@@ -23,10 +24,9 @@ formátum kiegészítéseként lehet még hozzáadni.
 Bevezetés
 ------------
 
-A szoftver menedzsment univerzumában létezik egy hely, ami még a bátrak szívét
-is megrendíti: az Függősések Számontartásának Pokolja. Minél nagyobbra nő a
-rendszered, minél több csomagot adsz hozzá, annál valószínűbb hogy előbb
-utóbb ebben az átkozott zúgban találod magad.
+A szoftver menedzsment univerzumában létezik egy rettegett hely: a verziópokol. Minél 
+nagyobbra nő a rendszered, minél több csomagot adsz hozzá, annál valószínűbb, hogy 
+előbb-utóbb a kellős közepében találod magad.
 
 Sok összefüggőségsel rendelkező rendszerekben az új csomagverziók hozzáadása
 gyorsan rémálommá alakul át. Ha túl szigorúak az szoftver-függőségeidnek a leírásai,
@@ -34,10 +34,9 @@ fenn áll a veszélye annak, hogy "version lock" alakul ki (amikor nem tudsz úg
 frissíteni egy csomagot, hogy vele együtt az összes tőle függő csomgagot ne
 frissítsd). Ugyanakkor, ha túl szabadon vannak ugyanezek megszabva,
 elkerülhetetlen, hogy idővel utólérjen a verzió-keveredés (amikor jobb
-kompatibilitást remélünk szoftver komponensek között mint ami realisztikus).
-Az Függősések Számontartásának Pokolja az, amikor e két helyzet közül az
-egyik vagy akár egyszerre mindkettő meggátol a projekt könnyed és rizikómentes
-előrevitelében.
+kompatibilitás- remélünk szoftver komponensek között mint ami realisztikus).
+A verziópokol az, amikor e két helyzet közül az egyik vagy akár egyszerre mindkettő 
+meggátol a projekt könnyed és rizikómentes előrevitelében.
 
 Erre a problémára válaszként fejlesztettem ki az itt található szabály- és
 feltételrendszert amik meghatározza, hogy hogyan válasszuk és növeljük a
@@ -70,39 +69,39 @@ Ez az felület létezhet kizárolag dokumentáció formájában, vagy akár szof
 meghatározva, de mindenféleképpen szükséges, hogy precíz és minden részletre
 kiterjedő legyen.
 
-2. Az általános verziószám formátuma MUSZÁJ, hogy az X.Y.Z legyen, ahol az X, Y
+1. Az általános verziószám formátuma MUSZÁJ, hogy az X.Y.Z legyen, ahol az X, Y
 és Z a természetes számok halmazába tartoznak, kezdő nullák nélkül. X a
 "major", Y a "minor" és Z a "patch" verziószám. Mindhárom MUSZÁJ, hogy
 számtanilag helyesen növekedjen. Például: 1.9.0 -> 1.10.0 -> 1.11.0.
 
-3. Amiután egy új csomagverzió forgalomba lett hozva, a csomag tartalma nem
+1. Amiután egy új csomagverzió forgalomba lett hozva, a csomag tartalma nem
 változhat. Bármilyen változás MUSZÁJ, hogy új verzióként legyen hozzáadva.
 
-4. A nulladik "major" verzió (0.Y.Z) korai fejlesztésekre alkalmazható. Bárhol
+1. A nulladik "major" verzió (0.Y.Z) korai fejlesztésekre alkalmazható. Bárhol
 várhatóak változások a szoftverben és a publikus API-tól nem elvárható, hogy
 tökéletesen stabil legyen.
 
-5. Az első verzió (1.0.0) defíniálja a publikus API-t. Ezt követő
+1. Az első verzió (1.0.0) defíniálja a publikus API-t. Ezt követő
 verziószámok ennek az API-nak a változásától függnek.
 
-6. A "patch", Z verziószámot (x.y.Z | x > 0) MUSZÁJ növelni, amikor kizárólag
+1. A "patch", Z verziószámot (x.y.Z | x > 0) MUSZÁJ növelni, amikor kizárólag
 hátrafele kompatibilis hibajavításokat addunk a szoftverhez. Ilyen hibajavítás
 definíciója egy olyan belső változás ami addig hibás viselkedést korrigál.
 
-7. A "minor", Y verziószámot (x.Y.z | x > 0) MUSZÁJ növelni, amikor olyan új
+1. A "minor", Y verziószámot (x.Y.z | x > 0) MUSZÁJ növelni, amikor olyan új
 funkciókat adunk hozzá az API-hoz, ami a hátrafele kompatibilitást nem érinti.
 MUSZÁJ növelni, amikor korábbi funkciókat elavultként jelölünk meg. Növelni
 LEHET, amikor a új funkciók kerülnek a belső, privát kódbázisba. VÁLASZTHATÓAN
 tartalmazhat "patch" szintű változásokat is. A "patch" verziószám MUSZÁJ, hogy
 nullára csökkenjen amikor a "minor" verziószám növekszik.
 
-8. A "major", X verziószámot (X.y.z | X > 0) MUSZÁJ növelni, amikor visszafelé
+1. A "major", X verziószámot (X.y.z | X > 0) MUSZÁJ növelni, amikor visszafelé
 inkompatiblis változások vannak hozzáadva a nyílvános API-hoz. VÁLASZTHATÓAN
 tartalmazhat "patch" és "minor" szintű változásokat is. A "patch" és "minor"
 verziószámok MUSZÁJ, hogy nullára csökkenjenek amikor a "major" verziószám
 növekszik.
 
-9. Egy kiadás előtti ("pre-release") verzió VÁLASZTHATÓAN jelölhető egy
+1. Egy kiadás előtti ("pre-release") verzió VÁLASZTHATÓAN jelölhető egy
 kötőjelet követően pontokkal elválasztott azonosítókkal, közvetlenül a "patch"
 verzió után. Ezek az azonosítók MUSZÁJ, hogy kizárólag ASCII alfanumerikus
 karakterekből és kötőjelekből álljon. Azonosítók NEM LEHETNEK üresek.
@@ -112,7 +111,7 @@ verzió arra utal, hogy a verzió instabil és lehet, hogy nem elégíti ki a
 szándékozott kompatibilitási feltételeket amire a normál verzió utal. Például:
 1.0.0-alpha, 1.0.0-alpha.1, 1.0.0-0.3.7, 1.0.0-x.7.z.92.
 
-10. Kiadással ("build") kapcsolatos metaadatok VÁLASZTHATÓAN egy plusz jel
+1. Kiadással ("build") kapcsolatos metaadatok VÁLASZTHATÓAN egy plusz jel
 hozzáadásával, majd pontokkal elválasztott azonotsítokkal rögzíthetőek,
 közvetlenül a "patch" vagy kiadás előtti ("pre-release") verzió után. Ezek az
 azonosítól MUSZÁK hogy kizárólag ASCII alfanumerikus karakterekből és
@@ -123,7 +122,7 @@ két verzió ami csupán kiadással kapcsolatos metaadatban különböznek egyen
 elsőbbséget élveznek. Például: 1.0.0-alpha+001, 1.0.0+20130313144700,
 1.0.0-beta+exp.sha.5114f85.
 
-11. Az elsőbbség arra utal, hogy hogy viszonyulnak egymáshoz a verziók amikor
+1. Az elsőbbség arra utal, hogy hogy viszonyulnak egymáshoz a verziók amikor
 sorrendbe vannak téve. Az elsőbbséget MUSZÁJ a "major", "minor", "patch" és
 "pre-release" alapján számolni, ebben a sorrendben (kiadással kapcsolatos
 metaadatok, "build-metadata" nincsenek beleszámítva). Az elsőbbségi sorrendet
@@ -209,7 +208,7 @@ végig kell gondolnod, a változtatás hatásait és kiértékelned a bennefogla
 Professzionális fejlesztőként a te feladatod megfelelően dokumentálni az éles használatra
 kiadott szoftvert. A projekt hatékonyságának megtartása érdekében, egy másik rendkívül fontos feladat
 a szoftver komplexitásának kezelése, és azt nehéz kezelni, ha senki nem tudja, hogyan kell használni a szoftvert
-vagy milyen metódusokat biztonságos meghívni. Hosszútávon a Szemantikus verziózás, és a jól definiált publikus API-hoz 
+vagy milyen metódusokat biztonságos meghívni. Hosszútávon a Szemantikus verziószámozás, és a jól definiált publikus API-hoz 
 való ragaszkodás meghozza az eredményét, mindenki és minden zökkenőmentesen fog haladni.
 
 ### Mit tegyek ha véletlenül kiadok egy visszafelé inkompatibilis változtatást minor verzióként?
