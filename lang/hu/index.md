@@ -9,14 +9,13 @@ Szemantikus Verziószámozás 2.0.0
 
 Összefoglalás
 -------
-
-Vegyünk egy adott verzió számot, MAJOR.MINOR.PATCH, és növeljük:
+Adott egy verziószám, MAJOR.MINOR.PATCH, növeljük:
 
 1. a MAJOR verzió számot ha a változtatásaink eredményeként elveszítjük a
-   kompatibilitást korábbi verziókkal
-1. a MINOR verzió számot ha olyan funkcionalitásokat adunk amik megőrzik a
-visszafelé kompatibilitást.
-1. a PATCH verzió számot ha visszafelé kompatibilis hibajavításokat adunk hozzá
+kompatibilitást korábbi verzióval,
+1. a MINOR verzió számot ha olyan funkcionalitást adunk ami megőrzi a
+visszafelé kompatibilitást, és
+1. a PATCH verzió számot ha visszafelé kompatibilis hibajavításokat adunk hozzá.
 
 További verzió címkéket és kiadással kapcsolatos metaadatokat a MAJOR.MINOR.PATCH
 formátum kiegészítéseként lehet még hozzáadni.
@@ -28,32 +27,28 @@ A szoftver menedzsment univerzumában létezik egy rettegett hely: a verziópoko
 nagyobbra nő a rendszered, minél több csomagot adsz hozzá, annál valószínűbb, hogy 
 előbb-utóbb a kellős közepében találod magad.
 
-Sok összefüggőségsel rendelkező rendszerekben az új csomagverziók hozzáadása
-gyorsan rémálommá alakul át. Ha túl szigorúak az szoftver-függőségeidnek a leírásai,
-fenn áll a veszélye annak, hogy "version lock" alakul ki (amikor nem tudsz úgy
-frissíteni egy csomagot, hogy vele együtt az összes tőle függő csomgagot ne
-frissítsd). Ugyanakkor, ha túl szabadon vannak ugyanezek megszabva,
-elkerülhetetlen, hogy idővel utólérjen a verzió-keveredés (amikor jobb
+Sok függőséggel rendelező rendszerekben, új csomagverziók kiadása hamar rémálommá válhat.
+Ha túl szigorúak az függőségi sepcifikációid, fenn áll a "verzió zár" veszélye (amikor már nem tudsz úgy
+frissíteni egy csomagot, hogy vele együtt az összes tőle függő csomgagot ne kelljen frissíteni). 
+Ugyanakkor, ha túl szabadon vannak ugyanezek megszabva, elkerülhetetlen, 
+hogy idővel utólérjen a verzió-keveredés (amikor jobb
 kompatibilitást remélünk szoftver komponensek között mint ami realisztikus).
 A verziópokol az, amikor e két helyzet közül az egyik vagy akár egyszerre mindkettő 
 meggátol a projekt könnyed és rizikómentes előrevitelében.
 
-Erre a problémára válaszként fejlesztettem ki az itt található szabály- és
-feltételrendszert amik meghatározza, hogy hogyan válasszuk és növeljük a
-verziószámokat. A szabályok alapja - bár nem egyetlen forrása - már elterjedt,
-legjobban bevált gyakorlatok amik egyaránt találhatóak zárt és nyílt forráskódú
-szoftverben. Az rendszer első feltétele egy publikus API létrehozása: ez
-egyaránt lehet dokumentáció formájában, vagy a programon keresztül meghatározva.
-Kulcsfontosságú, hogy ez az API átlátható es precíz legyen. Amiután az API már
-közzé lett téve, minden változást a szoftverben verziószám növelésével
-kommunikálunk. A X.Y.Z (Major.Minor.Patch) formátumot választjuk. Hiba javítások
-amik nem érintik az API-t a "patch" verziószámot; hátrafele kompatibilis
-fejlesztések a "minor" verziószámot; kompatibilitást megszakító változások a
-"major" verziószámot növelik.
-
-A rendszert "Semantic Versioning", tehát szemantikus verziószámozásnak
-kereszteltem. A séma mellett a szoftver evolúcióját az őt fedő verziószámok
-változása tükrözi: a verziószámok így valós jelentéssel bírnak.
+A probléma megoldásaként javaslom ezen egyszerű szabályok és követelmények halmazát,
+melyek megszabják hogyan rendeljünk hozzá, illetve inkrementáljuk a verziószámokat.
+Ezen szabályok, a már jól bevett gyakorlatokon alapulnak - ám, nem szükségszerűen korlátozódnak rájuk -, 
+mind zárt- és nyílt forráskódú szofverekben. Az rendszer első feltétele egy publikus API létrehozása. 
+Ez egyaránt lehet dokumentáció formájában, vagy a programon keresztül meghatározva.
+Kulcsfontosságú, hogy ez az API átlátható es precíz legyen. Miután az API-t kiadtuk, 
+minden változást a szoftverben verziószám növelésével kommunikálunk. 
+Tekintsük az X.Y.Z(Major.Minor.Patch) verzió formátumot.
+Hibajavításoknál, melyek nem értintik az API-t, növeljük a a patch verziót, visszafelé kompatibilis API 
+kiegészítések/módosítások esetén növeljük a minor verziót, és visszafelé nem kimpatibilis módosításoknál növeljük
+a major verziót.
+A rendszert "Szamtikus Verziószámozásnak" keresztelem. Ezen séma alapján, a verziószámok és ahogyan ezek változnak, 
+jelentést hordoznak a mögöttes kódról és hogy mi válozott egyik verzióról a másikra térve.
 
 
 A Szemantikus Verziószámozás leírása (SemVer)
