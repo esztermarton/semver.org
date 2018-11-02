@@ -47,7 +47,7 @@ Tekintsük az X.Y.Z(Major.Minor.Patch) verzió formátumot.
 Hibajavításoknál, melyek nem értintik az API-t, növeljük a a patch verziót, visszafelé kompatibilis API 
 kiegészítések/módosítások esetén növeljük a minor verziót, és visszafelé nem kimpatibilis módosításoknál növeljük
 a major verziót.
-A rendszert "Szamtikus Verziószámozásnak" keresztelem. Ezen séma alapján, a verziószámok és ahogyan ezek változnak, 
+A rendszert "Szemantikus Verziószámozásnak" keresztelem. Ezen séma alapján, a verziószámok és ahogyan ezek változnak, 
 jelentést hordoznak a mögöttes kódról és hogy mi válozott egyik verzióról a másikra térve.
 
 
