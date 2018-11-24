@@ -1,4 +1,3 @@
-
 ---
 title: Szemantikus Verziószámozás 2.0.0
 redirect_from: /lang/hu/
